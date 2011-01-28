@@ -52,6 +52,8 @@ Spark.ready(function() {
 });
 
 // This function is run when the framework or dependencies are changed, it appends the forms action
-function changeAction(framework) {
-	Spark('form').attribute({action: 'http://jsfiddle.net/api/post/' + framework + '/'});
+function changeAction(framework, dependencies) {
+	// So here we are appending the selected framework
+	// If dependencies is not empty we append that too
+	Spark('form').attribute({action: 'http://jsfiddle.net/api/post/' + framework + '/' + ((dependencies == '') ? '' : 'dependencies/' + dependencies + '/')});
 }
