@@ -18,7 +18,7 @@
 		
 		<form action='http://jsfiddle.net/api/post/mootools/1.3/' method='post' target='check'>
 			<p>Framework</p>
-			<select name='framework' onchange='changeFramework(this.form.framework.options[this.form.framework.selectedIndex].value)'>
+			<select name='framework' onchange='changeAction(this.form.framework.options[this.form.framework.selectedIndex].value, this.form.dependency_list.value)'>
 				<optgroup label='Mootools'>
 					<option value='mootools/1.3'>Mootools 1.3</option>
 					<option value='mootools/1.2.5'>Mootools 1.2.5</option>
@@ -79,7 +79,7 @@
 			</select>
 			
 			<p>Dependencies (No spaces, comma separated)</p>
-			<input type='text' name='dependency_list' onchange='changeDependencies(this.form.dependency_list.value)' />
+			<input type='text' name='dependency_list' onchange='changeAction(this.form.framework.options[this.form.framework.selectedIndex].value, this.form.dependency_list.value)' />
 			
 			<p>Resources (No spaces, comma separated)</p>
 			<input type='text' name='resources' />

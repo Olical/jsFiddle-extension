@@ -51,12 +51,7 @@ Spark.ready(function() {
 	});
 });
 
-// This function is run when the framework is changed, it appends the forms action
-function changeFramework(framework) {
+// This function is run when the framework or dependencies are changed, it appends the forms action
+function changeAction(framework) {
 	Spark('form').attribute({action: 'http://jsfiddle.net/api/post/' + framework + '/'});
-}
-
-// This function is run when the dependencies are changed and appends them to the URL
-function changeDependencies(dependencies) {
-	
 }
