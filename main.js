@@ -55,3 +55,8 @@ Spark.ready(function() {
 function changeFramework(framework) {
 	Spark('form').attribute({action: 'http://jsfiddle.net/api/post/' + framework + '/'});
 }
+
+// This function is run when the dependencies are changed and appends them to the URL
+function changeDependencies(dependencies) {
+	
+}
