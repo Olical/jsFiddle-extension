@@ -62,6 +62,10 @@ textarea {
 	height: 200px;
 }
 
+textarea.small {
+	height: 30px;
+}
+
 input[type='text'] {
 	width: 100%;
 	background-color: #FFFFFF;
