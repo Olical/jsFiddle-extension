@@ -1,6 +1,6 @@
 **The jsFiddle Chrome extension**
 
-[*Taken from the Chrome store page*]{https://chrome.google.com/webstore/detail/hoeeafhdpifikmfdapokkjkcpijlbhne?hl=en-US}
+[*Taken from the Chrome store page*](https://chrome.google.com/webstore/detail/hoeeafhdpifikmfdapokkjkcpijlbhne?hl=en-US)
 
 If you are tired of navigating to jsFiddle, opening your dashboard and then opening your required fiddle, then this is going to make your day.
 
