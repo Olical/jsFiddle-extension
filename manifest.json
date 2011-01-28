@@ -1,0 +1,16 @@
+{
+	"name": "jsFiddle",
+	"version": "1.4",
+	"description": "View your fiddles with their revisions and create fiddles directly from the extension.",
+	"options_page": "options.html",
+	"icons": {
+		"128": "icon.png"
+	},
+	"browser_action": {
+		"default_icon": "icon.png",
+		"popup": "popup.html"
+	},
+	"permissions": [
+		"http://jsfiddle.net/"
+	]
+}

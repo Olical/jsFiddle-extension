@@ -1,0 +1,232 @@
+<style type='text/css'>
+	body {
+		width: 500px;
+		overflow: hidden;
+		overflow-y: scroll;
+	}
+	
+	div.wrapper {
+		width: 97%;
+	}
+	
+	p, h1, a, li {
+		color: #3D668F;
+		font-family: arial, helvetica, sans-serif;
+		text-decoration: none;
+	}
+	
+	a:hover {
+		text-decoration: underline;
+	}
+	
+	div.banner {
+		width: 100%;
+		background-color: #3D668F;
+		height: 50px;
+		margin: 0 auto 10px auto;
+		padding: 0;
+		border-radius: 5px;
+		}
+		div.banner img {
+			height: 40px;
+			margin: 5px;
+			float: left;
+		}
+		div.banner h1 {
+			color: #FFFFFF;
+			margin: 5px;
+			padding: 0;
+			float: left;
+		}
+		div.banner a:hover {
+			text-decoration: none;
+		}
+	
+	ul {
+		list-style-type: circle;
+		margin: 0;
+		padding: 10px 0 0 20px;
+		width: 90%;
+		}
+		ul li {
+			margin: 10px 0 0 0;
+			width: 100%;
+			padding: 0;
+		}
+	
+	div#createFiddle, div#viewFiddle, div#configure {
+		display: none;
+	}
+	
+	textarea {
+		width: 100%;
+		height: 200px;
+	}
+	
+	input[type='text'] {
+		width: 100%;
+		background-color: #FFFFFF;
+		border: 1px solid #666666;
+		height: 30px;
+		font-size: 15px;
+		display: block;
+		clear: none;
+		margin: 0;
+		padding: 0;
+	}
+</style>
+
+<div class='wrapper'>
+	<div class='banner'>
+		<a href='http://jsfiddle.net/' target='_blank'>
+			<img src='icon-inverted.png' alt='jsFiddle' />
+			<h1>jsFiddle</h1>
+		</a>
+	</div>
+	
+	<div id='viewFiddle'>
+		<p><a href='javascript:void(0)' id='openCreateFiddle'>Click here to create a new fiddle</a></p>
+		<ul></ul>
+	</div>
+	
+	<div id='createFiddle'>
+		<p><a href='javascript:void(0)' id='openViewFiddle'>Click here to view your fiddles</a></p>
+		
+		<form action='http://jsfiddle.net/api/post/mootools/1.3/' method='post' target='check'>
+			<p>Framework</p>
+			<select name='framework' onchange='changeFramework(this.form.framework.options[this.form.framework.selectedIndex].value)'>
+				<optgroup label='Mootools'>
+					<option value='mootools/1.3'>Mootools 1.3</option>
+					<option value='mootools/1.2.5'>Mootools 1.2.5</option>
+					<option value='mootools/1.1.2'>Mootools 1.1.2</option>
+				</optgroup>
+				
+				<optgroup label='jQuery'>
+					<option value='jquery/1.4.4'>jQuery 1.4.4</option>
+					<option value='jquery/1.4.3'>jQuery 1.4.3</option>
+					<option value='jquery/1.3.2'>jQuery 1.3.2</option>
+					<option value='jquery/1.2.6'>jQuery 1.2.6</option>
+				</optgroup>
+				
+				<optgroup label='Prototype'>
+					<option value='prototype/1.7'>Prototype 1.7</option>
+					<option value='prototype/1.6.1.0'>Prototype 1.6.1.0</option>
+				</optgroup>
+				
+				<optgroup label='YUI'>
+					<option value='yui/3.3.0'>YUI 3.3.0</option>
+					<option value='yui/3.2.0'>YUI 3.2.0</option>
+					<option value='yui/2.8.0'>YUI 2.8.0</option>
+				</optgroup>
+				
+				<optgroup label='Glow'>
+					<option value='glow/1.7.0'>Glow core 1.7.0</option>
+				</optgroup>
+				
+				<optgroup label='No Library'>
+					<option value='library/pure'>No Library (pure JS)</option>
+				</optgroup>
+				
+				<optgroup label='Dojo'>
+					<option value='dojo/1.5'>Dojo 1.5</option>
+					<option value='dojo/1.4'>Dojo 1.4</option>
+					<option value='dojo/1.3'>Dojo 1.3</option>
+				</optgroup>
+				
+				<optgroup label='Processing.js'>
+					<option value='processing.js/1.0.0'>Processing.js 1.0.0</option>
+					<option value='processing.js/0.9.7'>Processing.js 0.9.7</option>
+					<option value='processing.js/0.6'>Processing.js 0.6</option>
+				</optgroup>
+				
+				<optgroup label='ExtJS'>
+					<option value='extjs/3.1.0'>ExtJS 3.1.0</option>
+					<option value='extjs/3.0.0'>ExtJS 3.0.0</option>
+				</optgroup>
+				
+				<optgroup label='Raphael'>
+					<option value='raphael/1.5.2'>Raphael 1.5.2</option>
+					<option value='raphael/1.4'>Raphael 1.4</option>
+				</optgroup>
+				
+				<optgroup label='RightJS'>
+					<option value='rightjs/1.5.2'>RightJS 2.1.1</option>
+				</optgroup>
+			</select>
+			
+			<p>Title</p>
+			<input type='text' name='title' />
+			
+			<p>Description</p>
+			<input type='text' name='description' />
+			
+			<p>Doctype</p>
+			<input type='text' name='dtd' value='html 5' />
+			
+			<p>HTML</p>
+			<textarea name='html'></textarea>
+			
+			<p>CSS</p>
+			<textarea name='css'></textarea>
+			
+			<p>JavaScript</p>
+			<textarea name='js'></textarea>
+			
+			<input type='submit' value='Send to jsFiddle!' />
+		</form>
+	</div>
+	
+	<div id='configure'>
+		<p>Please configure the extension first by right clicking the icon and clicking <strong>Options</strong>.</p>
+	</div>
+</div>
+
+<script type='text/javascript' src='Spark-v1.4.5.js'></script>
+<script type='text/javascript'>
+	Spark.ready(function() {
+		// Check if they need to configure the extension
+		if(localStorage['username'] === undefined) {
+			Spark('div#configure').transition('sneakin');
+		}
+		// Otherwise, load their fiddles
+		else {
+			Spark.ajax('GET', 'http://jsfiddle.net/api/user/' + localStorage['username'] + '/demo/list.json', 'limit=100', function(json) {
+				// Build the HTML and add it to the UL
+				var built = '';
+				var revision = '';
+				var list = Spark.json('decode', json);
+
+				for(var l in list) {
+					if(list[l].version >= 1) {
+						revision = ' (<a href="' + list[l].url + list[l].version + '/" target="_blank">Revision ' + list[l].version + '</a>)'
+					}
+					else {
+						revision = '';
+					}
+					
+					built += '<li><a href="' + list[l].url + '" target="_blank"><strong>' + list[l].title + revision + '</strong></a> - ' + list[l].description + '</li>';
+				}
+
+				Spark('ul').content(built);
+				
+				Spark('div#viewFiddle').transition('fadein', 300);
+			});
+		}
+		
+		Spark('a#openCreateFiddle').event('click', function() {
+			Spark('div#viewFiddle').transition('fadeout', 300, function() {
+				Spark('div#createFiddle').transition('fadein', 300);
+			});
+		});
+		
+		Spark('a#openViewFiddle').event('click', function() {
+			Spark('div#createFiddle').transition('fadeout', 300, function() {
+				Spark('div#viewFiddle').transition('fadein', 300);
+			});
+		});
+	});
+	
+	function changeFramework(framework) {
+		Spark('form').attribute({action: 'http://jsfiddle.net/api/post/' + framework + '/'});
+	}
+</script>
