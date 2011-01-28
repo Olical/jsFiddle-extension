@@ -1,6 +1,6 @@
 {
 	"name": "jsFiddle",
-	"version": "1.4",
+	"version": "1.5",
 	"description": "View your fiddles with their revisions and create fiddles directly from the extension.",
 	"options_page": "options.html",
 	"icons": {
